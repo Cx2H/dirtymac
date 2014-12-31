@@ -10,6 +10,6 @@ activities.
 - Do Not forget to make this script executable. How? (facepalm)                       
 - Ran this script I have no Network Manager now! Start it and comment out the section.
 - Why does it take 1 min to run this script? For the -vv of it. -sleep out for speed. 
-
+- You will need to edit this script to your environment. 
 
 
