@@ -75,18 +75,18 @@ ec="\n\e[01;32m[-+-]\e[00m Complete.."
 ###---Check state & Sp00f the interfaces 
   echo -e "\n\e[01;32m[-i]\e[00m Checking if $DEV1, $DEV2 are UP"
   sleep 3
-if ifconfig -a | grep "mon0\|mon1" >> /dev/null
-then
+if ifconfig -a | grep "mon0\|mon1" >> /dev/null; then
     echo -e "\n\e[01;32m[-!-]\e[00m $DEV1,$DEV2 are up."
-    sleep 3 
-    echo -e "\n\e[01;32m[-x-]\e[00m Stopping $DEV1,$DEV2"
-    airmon-ng stop $DEV1 >> /dev/null && airmon-ng stop $DEV2 >> /dev/null
     sleep 3
-      if ifconfig -a | grep "wlan0" >> /dev/null;
-      then
+    clear
+    echo -e "\n\e[01;32m[-x-]\e[00m Stopping $DEV1,$DEV2"
+      airmon-ng stop $DEV1 >> /dev/null && airmon-ng stop $DEV2 >> /dev/null
+    sleep 3
+    clear
+      if ifconfig -a | grep "wlan0" >> /dev/null; then
           echo -e "\n\e[01;32m[-i]\e[00m Taking $DEV down & Sp00fing."
           sleep 3
-          ip link set dev $DEV down && macchanger -A $DEV
+            ip link set dev $DEV down && macchanger -A $DEV
           sleep 5
           echo -e $ec
           sleep 3
@@ -94,7 +94,7 @@ then
       else
           echo -e "\n\e[01;32m[-!-]\e[00m Sp00fing $DEV Now..." 
           sleep 3
-          macchanger -A $DEV
+            macchanger -A $DEV
           sleep 5
       fi
 else 
