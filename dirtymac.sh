@@ -104,7 +104,7 @@ fi
   
 ###--- 0ptional to boost power FOR ALFA awuso36h # optional to boost power FOR ALFA awuso36h # optional to boost power FOR ALFA awuso36h
   echo -e "\n\e[01;32m[-i]\e[00m Boosting Alfa AWUS036H Tx Power to 30"
-    iw reg set BO && ip link set dev $DEV up && iwconfig $DEV channel 13 && iwconfig $DEV txpower 30 && iwconfig $DEV rate 1M 
+    iw reg set BO && ip link set dev $DEV up && iwconfig $DEV channel 13 && iwconfig $DEV txpower 30 && iwconfig $DEV rate 54M auto
   sleep 3
   echo -e $ec
   sleep 3
